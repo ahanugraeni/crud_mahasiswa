@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('VIEW STUDENT DATA') }}</div>
+                <div class="card-header">{{ $student->nim }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,27 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <table class="table table-responsive table-striped">
-                        <thead>
-                            <tr>
-                                <th>NIM</th>
-                                <th>Name</th>
-                                <th>Class</th>
-                                <th>Department</th>
-                                <th>Phone Number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{$student->nim}}</td>
-                                <td>{{$student->name}}</td>
-                                <td>{{$student->class}}</td>
-                                <td>{{$student->department}}</td>
-                                <td>{{$student->phone_number}}</td>
-                            </tr> 
-                        </tbody>
-                    </table>
+                    NIM  : {{$student->nim}} <br>
+                    Name : {{$student->name}} <br>
+                    Class  : {{$student->kelas->class_name}} <br>
+                    Department   : {{$student->department}} <br>
+                    Phone Number : {{$student->phone_number}} <br> 
                 </div>
             </div>
         </div>

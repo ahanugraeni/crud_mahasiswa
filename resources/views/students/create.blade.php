@@ -26,15 +26,25 @@
                         </div>
                         <div class="form-group">
                             <label for="class">Class</label>
-                            <input type="text" class="form-control" required="required" name="class"></br>
+                            <select class="form-control" name="Kelas">
+                                @foreach($kelas as $class)
+                                    <option value="{{$class->id}}">{{ $class->class_name }} </option>
+                                @endforeach
+                            </select><br>    
                         </div>
-                    <div class="form-group">
-                        <label for="department">Department</label>
-                        <input type="text" class="form-control" required="required" name="department"></br>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone_number">Phone Number</label>
-                        <input type="text" class="form-control" required="required" name="phone_number"></br>
-                    </div>
-                    <button type="submit" name="add" class="btn btn-primary float-right">Add Data</button>
-                </form>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input type="text" class="form-control" required="required" name="department"></br>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="text" class="form-control" required="required" name="phone_number"></br>
+                        </div>
+                        <button type="submit" name="add" class="btn btn-primary float-right">Add Data</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
