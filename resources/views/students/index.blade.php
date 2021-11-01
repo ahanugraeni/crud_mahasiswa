@@ -42,10 +42,10 @@
                         <tbody>
                           @foreach($student as $s)
                             <tr>
-                              <td>{{ $s->nim }}</td>
-                              <td>{{ $s->name }}</td>
-                              <td>{{ $s->kelas->class_name }}</td>
-                              <td>{{ $s->department }}</td>
+                              <td>{{$s->nim}}</td>
+                              <td>{{$s->name }}</td>
+                              <td>{{$s->kelas->class_name}}</td>
+                              <td>{{$s->department}}</td>
                               <td>
                                     <form action="/students/{{$s->id}}" method="post">
                                         <a href="/students/{{$s->id}}" class="btn btn-success">Show</a>
@@ -53,6 +53,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                        <a href="/students/{{$s->id}}/detail" class="btn btn-info">Nilai</a>
                                     </form>
                                 </td>
                             </tr> 
