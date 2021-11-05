@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 Use App\Models\Student;
 Use App\Models\Kelas;
+use PDF;
 
 class StudentController extends Controller
 {
@@ -143,5 +144,11 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
         return view('students.detail', ['student'=>$student]);
+    }
+
+    public function report($id){ 
+        $student = Student::find($id); 
+        $pdf = PDF::loadview('students.report',['student'=>$student]); 
+        return $pdf->stream(); 
     }
 }
