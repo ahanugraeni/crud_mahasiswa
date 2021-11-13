@@ -36,6 +36,17 @@
                         <label for="password">Password</label>
                         <input type="text" class="form-control" required="required" name="password"></br>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <div class="form">
+                            <select class="form-control" name="role">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <button type="submit" name="add" class="btn btn-primary 
                     float-right">Add Data</button>
                     </form>
